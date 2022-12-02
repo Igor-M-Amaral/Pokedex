@@ -1,8 +1,10 @@
 package com.example.igormattos.pokedex.di
 
-import com.example.igormattos.pokedex.api.PokemonService
+import com.example.igormattos.pokedex.data.services.PokemonService
 import com.example.igormattos.pokedex.data.repository.PokemonRepository
 import com.example.igormattos.pokedex.data.repository.PokemonRepositoryImpl
+import com.example.igormattos.pokedex.domain.GetPokemon
+import com.example.igormattos.pokedex.domain.GetPokemonsUseCase
 import com.example.igormattos.pokedex.utils.Constants
 import dagger.Binds
 import dagger.Module
@@ -36,4 +38,15 @@ abstract class RepositoryModule{
     abstract fun bindMyRepository(
         repository: PokemonRepositoryImpl
     ) : PokemonRepository
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class GetPokemonModule{
+
+    @Binds
+    @Singleton
+    abstract fun bindMyUseCase(
+        getPokemon: GetPokemon
+    ) : GetPokemonsUseCase
 }

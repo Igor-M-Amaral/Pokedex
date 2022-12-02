@@ -1,4 +1,4 @@
-package com.example.igormattos.pokedex.view
+package com.example.igormattos.pokedex.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

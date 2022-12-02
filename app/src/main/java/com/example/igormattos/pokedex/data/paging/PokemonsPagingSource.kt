@@ -2,7 +2,7 @@ package com.example.igormattos.pokedex.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.igormattos.pokedex.api.PokemonService
+import com.example.igormattos.pokedex.data.services.PokemonService
 import com.example.igormattos.pokedex.data.model.Result
 
 class PokemonsPagingSource(private val service: PokemonService) : PagingSource<Int, Result>() {

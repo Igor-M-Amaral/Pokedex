@@ -1,4 +1,4 @@
-package com.example.igormattos.pokedex.api
+package com.example.igormattos.pokedex.data.services
 
 import com.example.igormattos.pokedex.data.model.PokemonsModel
 import retrofit2.Response

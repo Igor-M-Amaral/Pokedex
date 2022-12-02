@@ -1,10 +1,8 @@
 package com.example.igormattos.pokedex.data.repository
 
-import androidx.paging.PagingData
-import com.example.igormattos.pokedex.data.model.Result
-import kotlinx.coroutines.flow.Flow
+import com.example.igormattos.pokedex.domain.model.Pokemons
 
 interface PokemonRepository {
 
-    fun getPokemons() : Flow<PagingData<Result>>
+    suspend fun getPokemons() : Pokemons
 }

@@ -1,22 +1,26 @@
 package com.example.igormattos.pokedex.data.repository
 
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import com.example.igormattos.pokedex.api.PokemonService
-import com.example.igormattos.pokedex.data.model.PokemonsModel
-import com.example.igormattos.pokedex.data.model.Result
-import com.example.igormattos.pokedex.data.paging.PokemonsPagingSource
-import kotlinx.coroutines.flow.Flow
-import retrofit2.Response
+import com.example.igormattos.pokedex.data.services.PokemonService
+import com.example.igormattos.pokedex.data.model.toPokemons
+import com.example.igormattos.pokedex.domain.model.Pokemons
+import com.example.igormattos.pokedex.utils.Output
+import com.example.igormattos.pokedex.utils.parseResponse
 import javax.inject.Inject
 
 class PokemonRepositoryImpl @Inject constructor(private val service: PokemonService) :
     PokemonRepository {
-    override fun getPokemons(): Flow<PagingData<Result>> {
-        val request = Pager(PagingConfig(pageSize = 1)){
-            PokemonsPagingSource(service)
-        }.flow
-        return request
+    override suspend fun getPokemons(): Pokemons {
+        val result = service.listPokemons().parseResponse()
+
+        return when (result){
+            is Output.Success ->{
+                val pokemonsResponseList = result.value
+
+                pokemonsResponseList.toPokemons()
+            }
+            is Output.Failure -> throw  Exception()
+        }
+
     }
+
 }
