@@ -3,8 +3,8 @@ package com.example.igormattos.pokedex.data.repository
 import com.example.igormattos.pokedex.data.services.PokemonService
 import com.example.igormattos.pokedex.data.model.toPokemons
 import com.example.igormattos.pokedex.domain.model.Pokemons
-import com.example.igormattos.pokedex.utils.Output
-import com.example.igormattos.pokedex.utils.parseResponse
+import com.example.igormattos.pokedex.core.Output
+import com.example.igormattos.pokedex.core.parseResponse
 import javax.inject.Inject
 
 class PokemonRepositoryImpl @Inject constructor(private val service: PokemonService) :

@@ -1,4 +1,4 @@
-package com.example.igormattos.pokedex.utils
+package com.example.igormattos.pokedex.core
 
 class Constants {
 

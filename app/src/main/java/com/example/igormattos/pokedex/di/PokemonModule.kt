@@ -5,7 +5,7 @@ import com.example.igormattos.pokedex.data.repository.PokemonRepository
 import com.example.igormattos.pokedex.data.repository.PokemonRepositoryImpl
 import com.example.igormattos.pokedex.domain.GetPokemon
 import com.example.igormattos.pokedex.domain.GetPokemonsUseCase
-import com.example.igormattos.pokedex.utils.Constants
+import com.example.igormattos.pokedex.core.Constants
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

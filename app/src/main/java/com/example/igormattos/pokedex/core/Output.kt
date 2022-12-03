@@ -1,4 +1,4 @@
-package com.example.igormattos.pokedex.utils
+package com.example.igormattos.pokedex.core
 
 import retrofit2.Response
 import java.net.HttpURLConnection

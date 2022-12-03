@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.igormattos.pokedex.databinding.RowPokemonsBinding
 import com.example.igormattos.pokedex.presentation.model.PokemonsResult
-import com.example.igormattos.pokedex.utils.Constants
+import com.example.igormattos.pokedex.core.Constants
 
 class PokemonsViewHolder(private val binding: RowPokemonsBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(pokemon: PokemonsResult) {
